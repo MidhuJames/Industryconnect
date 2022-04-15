@@ -18,3 +18,4 @@ C:\Users\Midhu\source\repos\Industry Connect\Industryconnect\industryconnect\obj
 C:\Users\Midhu\source\repos\Industry Connect\Industryconnect\industryconnect\obj\Debug\net5.0\industryconnect.pdb
 C:\Users\Midhu\source\repos\Industry Connect\Industryconnect\industryconnect\obj\Debug\net5.0\industryconnect.genruntimeconfig.cache
 C:\Users\Midhu\source\repos\Industry Connect\Industryconnect\industryconnect\obj\Debug\net5.0\ref\industryconnect.dll
+C:\Users\Midhu\source\repos\Industry Connect\Industryconnect\industryconnect\bin\Debug\net5.0\SeleniumExtras.WaitHelpers.dll

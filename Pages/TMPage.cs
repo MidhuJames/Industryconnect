@@ -1,54 +1,18 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using industryconnect.Utilities;
+using OpenQA.Selenium;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace industryconnect
+namespace industryconnect.Pages
 {
-    internal class Program
+    internal class TMPage
     {
-        static void Main(string[] args)
+        public void CreateTM(IWebDriver driver)
         {
-            // Open Chrome browser
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize(); //to maximize the screen
-
-            // Launch Portal
-            driver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
-
-            // Identify user textbox and valid user name
-            IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
-            usernameTextbox.SendKeys("hari");
-
-            // Identify user textbox and valid password
-            IWebElement passwordTextbox = driver.FindElement(By.Id("Password"));
-            passwordTextbox.SendKeys("123123");
-
-            // Click on Login Button
-            IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            loginButton.Click();
-
-            //Check if user is login successfully
-            IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
-            if (helloHari.Text == "Hello hari!")
-            {
-                Console.WriteLine("Logged in Successfully: Test Passed");
-
-            }
-            else
-            {
-                Console.WriteLine("Login Failed: Test Failed");
-            }
-            // Create Time amd Material Module
-
-            // Go to Time and Material page
-
-            IWebElement administrationDropdown = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a"));
-            administrationDropdown.Click();
-
-            IWebElement tmOption = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));
-            tmOption.Click();
-
             // Create new record
 
             IWebElement recordButton = driver.FindElement(By.XPath("//*[@id='container']/p/a"));
@@ -59,7 +23,7 @@ namespace industryconnect
             IWebElement typecodeDropdown = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[1]"));
             typecodeDropdown.Click();
 
-            IWebElement materialOption = driver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[1]"));
+            IWebElement materialOption = driver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]"));
             materialOption.Click();
 
             //Type Code
@@ -79,11 +43,13 @@ namespace industryconnect
             //save button
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
-            Thread.Sleep(1000);
-
+            // Wait.WaitToBeClickable(driver, "XPath", "//*[@id='tmsGrid']/div[4]/a[4]/span", 2);
+            Wait.WaitToBeVisible(driver, "XPATH", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
             //click to go to last page
             IWebElement lastPageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             lastPageButton.Click();
+            
+         
             Thread.Sleep(1000);
 
             // check if record is created in the table and has expected value
@@ -98,6 +64,17 @@ namespace industryconnect
             {
                 Console.WriteLine("Material Record created Failed: Test Failed");
             }
+
+        }
+
+        public void EditTM(IWebDriver driver)
+        {
+
+        }
+
+        public void DeleteTM(IWebDriver driver)
+        {
+
         }
     }
 }
