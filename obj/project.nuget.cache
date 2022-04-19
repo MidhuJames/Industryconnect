@@ -1,21 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "hzoIrud+9fjzLD+v9MGesyTa1u5WDa/Gqygef2u4o/9+K1LaoUAZlBzIrUQiWeUqbGMFloizDOsOC3/TMN7oTA==",
+  "dgSpecHash": "OpLbl37w7WdJ1cJh+CdqHQRY4GYXGvGV2v7eSzfOcYBOfLwaLF3XnD6wH0vcuZJXA18u7kuGw0H8f+0UVzS5OQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Midhu\\source\\repos\\Industry Connect\\Industryconnect\\industryconnect\\industryconnect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Midhu\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.net.test.sdk\\17.1.0\\microsoft.net.test.sdk.17.1.0.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.app\\2.2.8\\microsoft.netcore.app.2.2.8.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.2.8\\microsoft.netcore.dotnetapphost.2.2.8.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.2.8\\microsoft.netcore.dotnethostpolicy.2.2.8.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.2.8\\microsoft.netcore.dotnethostresolver.2.2.8.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.platforms\\2.2.4\\microsoft.netcore.platforms.2.2.4.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.netcore.targets\\2.0.0\\microsoft.netcore.targets.2.0.0.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.1.0\\microsoft.testplatform.objectmodel.17.1.0.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\microsoft.testplatform.testhost\\17.1.0\\microsoft.testplatform.testhost.17.1.0.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\nunit3testadapter\\4.2.1\\nunit3testadapter.4.2.1.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\selenium.support\\4.1.0\\selenium.support.4.1.0.nupkg.sha512",
     "C:\\Users\\Midhu\\.nuget\\packages\\selenium.webdriver\\4.1.0\\selenium.webdriver.4.1.0.nupkg.sha512",
-    "C:\\Users\\Midhu\\.nuget\\packages\\selenium.webdriver.chromedriver\\99.0.4844.5100\\selenium.webdriver.chromedriver.99.0.4844.5100.nupkg.sha512"
+    "C:\\Users\\Midhu\\.nuget\\packages\\selenium.webdriver.chromedriver\\99.0.4844.5100\\selenium.webdriver.chromedriver.99.0.4844.5100.nupkg.sha512",
+    "C:\\Users\\Midhu\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using industryconnect.Utilities;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,8 @@ namespace industryconnect.Pages
             //save button
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
-            // Wait.WaitToBeClickable(driver, "XPath", "//*[@id='tmsGrid']/div[4]/a[4]/span", 2);
-            Wait.WaitToBeVisible(driver, "XPATH", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
+             Wait.WaitToBeVisible(driver, "XPath", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
+          //  Wait.WaitToBeVisible(driver, "XPATH", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
             //click to go to last page
             IWebElement lastPageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             lastPageButton.Click();
@@ -55,15 +56,19 @@ namespace industryconnect.Pages
             // check if record is created in the table and has expected value
             IWebElement actualCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
 
-            if (actualCode.Text == "IndustryConnect")
-            {
-                Console.WriteLine("Material Record created Successfully: Test Passed");
+            //Option 1
+            Assert.That(actualCode.Text == "IndustryConnect", "Actual code and Expected code do not match");
 
-            }
-            else
-            {
-                Console.WriteLine("Material Record created Failed: Test Failed");
-            }
+            //Option 2
+          //  if (actualCode.Text == "IndustryConnect")
+           // {
+            //   Assert.Pass("Material Record created Successfully: Test Passed");
+
+           // }
+           // else
+           // {
+            //   Assert.Fail("Material Record created Failed: Test Failed");
+           //  }
 
         }
 
