@@ -75,6 +75,18 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[99.0.4844.5100, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.69, )"
+            },
+            "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.9.69, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.9.69, )"
             }
           },
           "imports": [
@@ -92,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

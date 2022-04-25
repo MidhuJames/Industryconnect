@@ -175,7 +175,7 @@ namespace industryconnect.Pages
 
             //Option 1
             Assert.That(editedCode.Text != "Editedindustry", "Actual code and Expected code do not match");
-          //  Assert.That(editedTypeCode.Text != "T", "Actual Type code and Expected Type code do not match");
+           Assert.That(editedTypeCode.Text != "T", "Actual Type code and Expected Type code do not match");
             Assert.That(editedDescription.Text != "edited industry connect program", "Actual Description and Expected Description do not match");
             Assert.That(editedPrice.Text != "$700.00", "Actual Price and Expected Price do not match");
         }
