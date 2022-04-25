@@ -10,7 +10,7 @@ namespace industryconnect.Pages
 {
     internal class HomePage
     {
-        public void GoToHomePage(IWebDriver driver)
+        public void GoToTMPage(IWebDriver driver)
         {
             // Go to Time and Material page
 
@@ -22,5 +22,11 @@ namespace industryconnect.Pages
             IWebElement tmOption = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));
             tmOption.Click();
         }
+        public void GoToEmployeePage(IWebDriver driver)
+        {
+
+        }
+
+        
     }
 }

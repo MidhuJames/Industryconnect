@@ -10,57 +10,55 @@ namespace industryconnect.Tests
 
 {
     [TestFixture]
+    [Parallelizable]
     internal class TM_Tests : CommonDriver
     {
        
-        [SetUp]
-        public void LoginFunction()
-        {
-            // Open Chrome browser
-             driver = new ChromeDriver();
-            driver.Manage().Window.Maximize(); //to maximize the screen
+       
 
-            //Login page initialization and definition
 
-            LoginPage loginPageObj = new LoginPage();
-            loginPageObj.LoginSteps(driver);
-
-            //Home page initialization and definition
-
-            HomePage homePageObj = new HomePage();
-            homePageObj.GoToHomePage(driver);
-
-        }
-        [Test]
+        
+        [Test, Order(1)]
         public void CreateTM_Test()
         {
-            //Create page initilialization and definition
 
-            TMPage tMPageObj = new TMPage();
+        //Home page initialization and definition
+
+        HomePage homePageObj = new HomePage();
+        homePageObj.GoToTMPage(driver);
+        //Create page initilialization and definition
+
+        TMPage tMPageObj = new TMPage();
             tMPageObj.CreateTM(driver);
 
 
         }
-        [Test]
+        [Test, Order(2)]
         public void EditTM_Test()
         {
-            //Edit TM
-            TMPage tMPageObj = new TMPage();
+
+        //Home page initialization and definition
+
+        HomePage homePageObj = new HomePage();
+        homePageObj.GoToTMPage(driver);
+        //Edit TM
+        TMPage tMPageObj = new TMPage();
             tMPageObj.EditTM(driver);
 
         }
-        [Test]
+        [Test, Order(3)]
         public void DeleteTM_Test()
         {
-            //Delete TM
-            TMPage tMPageObj = new TMPage();
+
+        //Home page initialization and definition
+
+        HomePage homePageObj = new HomePage();
+        homePageObj.GoToTMPage(driver);
+        //Delete TM
+        TMPage tMPageObj = new TMPage();
             tMPageObj.DeleteTM(driver);
 
         }
-        [TearDown]
-        public void closeTestRun()
-        {
 
-        }
-    }
+}
 }
