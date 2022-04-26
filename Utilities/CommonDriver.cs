@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace industryconnect.Utilities
 {
-    internal class CommonDriver
+    public class CommonDriver
     {
         public static IWebDriver driver;
         [OneTimeSetUp]
