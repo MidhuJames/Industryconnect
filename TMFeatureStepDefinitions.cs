@@ -10,6 +10,11 @@ namespace industryconnect
     [Binding]
     public class TMFeatureStepDefinitions : CommonDriver
     {
+        // Page Object Initilalization
+        LoginPage loginPageObj = new LoginPage();
+        HomePage homePageObj = new HomePage();
+
+        TMPage tMPageObj = new TMPage();
         [Given(@"I logged into turn up portal successfully")]
         public void GivenILoggedIntoTurnUpPortalSuccessfully()
         {
@@ -19,7 +24,7 @@ namespace industryconnect
 
             //Login page initialization and definition
 
-            LoginPage loginPageObj = new LoginPage();
+            
             loginPageObj.LoginSteps(driver);
         }
 
@@ -28,25 +33,24 @@ namespace industryconnect
         {
             //Home page initialization and definition
 
-            HomePage homePageObj = new HomePage();
+            
             homePageObj.GoToTMPage(driver);
         }
 
         [When(@"I create a new time and material record")]
         public void WhenICreateANewTimeAndMaterialRecord()
         {
-            TMPage tMPageObj = new TMPage();
             tMPageObj.CreateTM(driver);
         }
 
         [Then(@"the record should be created successfully")]
         public void ThenTheRecordShouldBeCreatedSuccessfully()
         {
-            TMPage tMPageObj = new TMPage();
-            string newCode = tMPageObj.GetCode(driver);
-            string newTypeCode = tMPageObj.GetCode(driver);
-            string newDescription = tMPageObj.GetCode(driver);
-            string newPrice = tMPageObj.GetCode(driver);
+            
+            string newCode = tMPageObj.GetEditedCode(driver);
+            string newTypeCode = tMPageObj.GetEditedCode(driver);
+            string newDescription = tMPageObj.GetEditedCode(driver);
+            string newPrice = tMPageObj.GetEditedCode(driver);
 
             Assert.That(newCode == "IndustryConnect", "Actual code and Expected code do not match");
             Assert.That(newTypeCode == "T", "Actual Type code and Expected Type code do not match");
@@ -54,20 +58,26 @@ namespace industryconnect
             Assert.That(newPrice == "$12.00", "Actual Price and Expected Price do not match");
 
         }
-        [When(@"I update '([^']*)' on an existing time and material record")]
-        public void WhenIUpdateOnAnExistingTimeAndMaterialRecord(string p0 )
+        [Then(@"the record should have the updated '([^']*)','([^']*)',and '([^']*)'")]
+        public void WhenTheRecordShouldHaveTheUpdatedAnd(string p0, string p1, string p2)
         {
-            TMPage tMPageObj = new TMPage();
-            tMPageObj.EditTM(driver,p0);
+            
+            tMPageObj.EditTM(driver,p0,p1,p2);
         }
-
-        [Then(@"the record should have the updated '([^']*)'")]
-        public void ThenTheRecordShouldHaveTheUpdated(string p0)
+        [Then(@"the record should have the updated '([^']*)','([^']*)',and '([^']*)'")]
+        public void ThenTheRecordShouldHaveTheUpdatedAnd(string p0, string p1, string p2)
         {
-            TMPage tMPageObj = new TMPage();
-            string newEditedDescription = tMPageObj.GetCode(driver);
+            
+            string newEditedDescription = tMPageObj.getEditedDescription(driver);
             Assert.That(newEditedDescription == p0, "Actual Description and Expected Description do not match");
+            string newEditedCode = tMPageObj.getEditedCode(driver);
+            Assert.That(newEditedCode == p1, "Actual Code and Expected Code do not match");
+            string newEditedPrice = tMPageObj.getEditedPrice(driver);
+            Assert.That(newEditedPrice == p2, "Actual Price and Expected Price do not match");
         }
+       
+
+
 
     }
 }

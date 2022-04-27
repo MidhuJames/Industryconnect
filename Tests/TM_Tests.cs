@@ -43,7 +43,7 @@ namespace industryconnect.Tests
         homePageObj.GoToTMPage(driver);
         //Edit TM
         TMPage tMPageObj = new TMPage();
-            tMPageObj.EditTM(driver, "dummy");
+            tMPageObj.EditTM(driver, "dummy","dummy1","dummy2");
 
         }
         [Test, Order(3)]

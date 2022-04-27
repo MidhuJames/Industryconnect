@@ -77,7 +77,9 @@ namespace industryconnect.Pages
             //  }
 
         }
-        public string GetCode(IWebDriver driver)
+
+        
+        public string GetEditedCode(IWebDriver driver)
         {
             IWebElement actualCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
             return actualCode.Text;
@@ -100,7 +102,7 @@ namespace industryconnect.Pages
         }
 
 
-        public void EditTM(IWebDriver driver, string description)
+        public void EditTM(IWebDriver driver, string description, string code,string price)
         {
             Wait.WaitToBeVisible(driver, "XPath", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
             //  Wait.WaitToBeVisible(driver, "XPATH", "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", 2);
@@ -122,7 +124,7 @@ namespace industryconnect.Pages
             //Type Edit Code
             IWebElement codeTextbox = driver.FindElement(By.Id("Code"));
             codeTextbox.Clear();
-            codeTextbox.SendKeys("Editedindustry");
+            codeTextbox.SendKeys(code);
 
             //Type Description
             IWebElement descriptionTextbox = driver.FindElement(By.Id("Description"));
@@ -137,7 +139,7 @@ namespace industryconnect.Pages
             priceTextbox.Clear();
             priceTag.Click();
 
-            priceTextbox.SendKeys("700");
+            priceTextbox.SendKeys(price);
 
             //save button
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
@@ -152,21 +154,33 @@ namespace industryconnect.Pages
             Thread.Sleep(1000);
 
             // check if record is created in the table and has expected value
-            IWebElement createdCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+           // IWebElement createdCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
             IWebElement createdTypeCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
           //  IWebElement createdDescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
-            IWebElement createdPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
+          //  IWebElement createdPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
 
             //Option 1
-            Assert.That(createdCode.Text == "Editedindustry", "Actual code and Expected code do not match");
+          //  Assert.That(createdCode.Text == "Editedindustry", "Actual code and Expected code do not match");
             Assert.That(createdTypeCode.Text == "T", "Actual Type code and Expected Type code do not match");
            // Assert.That(createdDescription.Text == "edited industry connect program", "Actual Description and Expected Description do not match");
-            Assert.That(createdPrice.Text == "$700.00", "Actual Price and Expected Price do not match");
+           // Assert.That(createdPrice.Text == "$700.00", "Actual Price and Expected Price do not match");
         }
-        public string getDescription(IWebDriver driver)
+        public string getEditedDescription(IWebDriver driver)
         {
             IWebElement createdDescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
             return createdDescription.Text;
+
+        }
+        public string getEditedCode(IWebDriver driver)
+        {
+            IWebElement createdCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+            return createdCode.Text;
+
+        }
+        public string getEditedPrice(IWebDriver driver)
+        {
+            IWebElement createdPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
+            return createdPrice.Text;
 
         }
 
