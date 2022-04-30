@@ -111,9 +111,9 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("edit time and material record with valid details")]
-        [NUnit.Framework.TestCaseAttribute("Time", "Midhu", "50", null)]
-        [NUnit.Framework.TestCaseAttribute("Material", "Keyboard", "80", null)]
-        [NUnit.Framework.TestCaseAttribute("EditedRecord", "Mouse", "120", null)]
+        [NUnit.Framework.TestCaseAttribute("Time", "Midhu", "$50.00", null)]
+        [NUnit.Framework.TestCaseAttribute("Material", "Keyboard", "$80.00", null)]
+        [NUnit.Framework.TestCaseAttribute("EditedRecord", "Mouse", "$120.00", null)]
         public void EditTimeAndMaterialRecordWithValidDetails(string description, string code, string price, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -139,10 +139,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I navigate to Time and Material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
- testRunner.When(string.Format("I update \'{0}\', \'{1}\',and \'{2}\' on an existing time and material record", description, code, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I update \'{0}\', \'{1}\'and \'{2}\' on an existing time and material record", description, code, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.Then(string.Format("the record should have the updated \'{0}\',\'{1}\',and \'{2}\'", description, code, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the record should have the updated \'{0}\',\'{1}\'and \'{2}\'", description, code, price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

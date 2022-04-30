@@ -58,13 +58,14 @@ namespace industryconnect
             Assert.That(newPrice == "$12.00", "Actual Price and Expected Price do not match");
 
         }
-        [Then(@"the record should have the updated '([^']*)','([^']*)',and '([^']*)'")]
-        public void WhenTheRecordShouldHaveTheUpdatedAnd(string p0, string p1, string p2)
+        [When(@"I update '([^']*)', '([^']*)'and '([^']*)' on an existing time and material record")]
+        public void WhenIUpdateAndOnAnExistingTimeAndMaterialRecord(string p0, string p1, string p2)
         {
             
             tMPageObj.EditTM(driver,p0,p1,p2);
         }
-        [Then(@"the record should have the updated '([^']*)','([^']*)',and '([^']*)'")]
+
+        [Then(@"the record should have the updated '([^']*)','([^']*)'and '([^']*)'")]
         public void ThenTheRecordShouldHaveTheUpdatedAnd(string p0, string p1, string p2)
         {
             
@@ -75,6 +76,9 @@ namespace industryconnect
             string newEditedPrice = tMPageObj.getEditedPrice(driver);
             Assert.That(newEditedPrice == p2, "Actual Price and Expected Price do not match");
         }
+
+        
+
        
 
 
